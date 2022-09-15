@@ -12,9 +12,12 @@ class App extends Component {
       // company: 'ZTM'
       monsters: [],
     }
+
+    console.log('Process constructor');
   }
 
   componentDidMount() {
+    console.log('Process componentDidMount')
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(response => response.json())
       .then((users) => this.setState(() => {
@@ -26,6 +29,7 @@ class App extends Component {
   }
 
   render() {
+    console.log('Process render');
     return (
       <div className='App'>
         <input className='search-box' type='search' placeholder='search monsters'/>
