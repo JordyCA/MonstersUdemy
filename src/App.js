@@ -48,29 +48,10 @@ class App extends Component {
         });
 
         return (<div className='App'>
+            <h1 className='app-title'>Monster Rolodex</h1>
             <SearchBox className='monster-search-box' onChangeHandler={onSearchChangue} placeholder='search monsters'></SearchBox>
             <CardList monster={filteredMonster}/>
         </div>);
-        // return (
-        // <div className="App">
-        //     <header className="App-header">
-        //       <img src={logo} className="App-logo" alt="logo" />
-        //       <p>Hi {this.state.name.firstName} {this.state.name.lastName}, I dont work at {this.state.company}</p>
-        //       <button onClick={() => {
-        //         // this.state.name = 'Andrei'it
-        //         // this.setState({name: {firstName: 'Jordy', lastName: 'Castro'}})
-        //         this.setState( () => {
-        //           return {
-        //             name: {firstName: 'Jordy', lastName: 'Castro'}
-        //           }
-        //         }, () => {
-        //           console.log(this.state);
-        //         })
-        //         //console.log(this.state)
-        //       }}>Change Name</button>
-        //     </header>
-        // </div>
-        // );
     };
 }
 
