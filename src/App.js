@@ -8,17 +8,17 @@ import './App.css';
 
 const App = () => {
 
-    console.log('render');
+    // console.log('render');
 
     const [searchField, setSearchField] = useState(''); //** [value, setValue]
     const [monsters, setMonsters] = useState([]);
     const [filterMonsters, setFilterMonsters] = useState(monsters);
-    const [stringFlied, setStringFiled] = useState('');
+    //const [stringFlied, setStringFiled] = useState('');
 
     //console.log({searchField});
     // console.log(searchField);
 
-    console.log('Render');
+    // console.log('Render');
 
     useEffect(() => {
         console.log('UseEffect')
@@ -40,25 +40,25 @@ const App = () => {
             return monster.name.toLocaleLowerCase().includes(searchField);
         });
         setFilterMonsters(newFilteredMonster);
-        console.log('effect is firing');
+        // console.log('effect is firing');
     }, [monsters, searchField]);
 
-    const onStringFlied = (event) => {
-        setStringFiled(event.target.value);
-    }
+    // const onStringFlied = (event) => {
+    //     setStringFiled(event.target.value);
+    // }
 
     const filteredMonster = monsters.filter((monster) => {
         return monster.name.toLocaleLowerCase().includes(searchField);
     });
 
-    console.log(filteredMonster);
+    //console.log(filteredMonster);
 
     return (
         <div className='App'>
             <h1 className='app-title'>Monster Rolodex</h1>
             <SearchBox className='monster-search-box' onChangeHandler={onSearchChangue} placeholder='search monsters'></SearchBox>
-            <SearchBox onChangeHandler={onStringFlied} placeholder='set String field'></SearchBox>
-            <CardList monster={filteredMonster}/>
+            {/* <SearchBox onChangeHandler={onStringFlied} placeholder='set String field'></SearchBox> */}
+            <CardList monsters={filteredMonster}/>
         </div>
     );
 }
